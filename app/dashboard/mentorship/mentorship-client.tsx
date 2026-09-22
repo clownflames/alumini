@@ -373,7 +373,7 @@ export function MentorshipClient({
               <Select
                 value={mentorCollegeId || "all"}
                 onValueChange={(v) =>
-                  setMentorCollegeId(v === "all" ? "" : v)
+                  setMentorCollegeId(v === "all" || v === null ? "" : v)
                 }
               >
                 <SelectTrigger>
@@ -392,7 +392,7 @@ export function MentorshipClient({
               <Select
                 value={mentorDepartmentId || "all"}
                 onValueChange={(v) =>
-                  setMentorDepartmentId(v === "all" ? "" : v)
+                  setMentorDepartmentId(v === "all" || v === null ? "" : v)
                 }
               >
                 <SelectTrigger>

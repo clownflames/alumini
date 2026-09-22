@@ -27,7 +27,7 @@ export function getDepartmentColumns({
 }: {
   onEdit: (d: Department) => void;
   onDelete: (d: Department) => void;
-}): ColumnDef<Department>[] {
+}) {
   return [
     {
       accessorKey: "name",

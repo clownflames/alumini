@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
     const response = await auth.api.signInEmail({
       body: { email, password },
       asResponse: true,
-    });
+    }) as Response;
 
     // better-auth returns non-2xx on failure
     if (!response.ok) {

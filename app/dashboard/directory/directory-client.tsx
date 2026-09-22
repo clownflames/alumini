@@ -171,7 +171,7 @@ export function DirectoryClient({
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <Select
             value={collegeId || "all"}
-            onValueChange={(v) => setCollegeId(v === "all" ? "" : v)}
+            onValueChange={(v) => setCollegeId(v === "all" || v === null ? "" : v)}
           >
             <SelectTrigger>
               <SelectValue placeholder="All Colleges" />
@@ -189,7 +189,7 @@ export function DirectoryClient({
           <Select
             value={departmentId || "all"}
             onValueChange={(v) =>
-              setDepartmentId(v === "all" ? "" : v)
+              setDepartmentId(v === "all" || v === null ? "" : v)
             }
           >
             <SelectTrigger>
@@ -207,7 +207,7 @@ export function DirectoryClient({
 
           <Select
             value={batchId || "all"}
-            onValueChange={(v) => setBatchId(v === "all" ? "" : v)}
+            onValueChange={(v) => setBatchId(v === "all" || v === null ? "" : v)}
           >
             <SelectTrigger>
               <SelectValue placeholder="All Batches" />

@@ -87,9 +87,6 @@ export function FacultyCreateDrawer({
       <SheetContent
         side="bottom"
         className="h-[60vh] sm:max-w-none flex flex-col p-0 gap-0"
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onInteractOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <SheetHeader className="shrink-0 border-b px-6 py-4">
           <SheetTitle>Create Faculty Account</SheetTitle>

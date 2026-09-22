@@ -121,9 +121,6 @@ export function AnnouncementDrawer({
       <SheetContent
         side="bottom"
         className="h-[90vh] sm:max-w-none flex flex-col p-0 gap-0"
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onInteractOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <SheetHeader className="shrink-0 border-b px-6 py-4">
           <SheetTitle>
@@ -174,7 +171,7 @@ export function AnnouncementDrawer({
                 <Select
                   value={values.priority}
                   onValueChange={(v) =>
-                    set("priority", v as AnnouncementPriority)
+                    set("priority", (v ?? "normal") as AnnouncementPriority)
                   }
                 >
                   <SelectTrigger id="priority">
@@ -194,7 +191,7 @@ export function AnnouncementDrawer({
                 <Select
                   value={values.audience}
                   onValueChange={(v) =>
-                    set("audience", v as AnnouncementAudience)
+                    set("audience", (v ?? "all") as AnnouncementAudience)
                   }
                 >
                   <SelectTrigger id="audience">
@@ -216,7 +213,7 @@ export function AnnouncementDrawer({
                 <Select
                   value={values.collegeId || "none"}
                   onValueChange={(v) =>
-                    set("collegeId", v === "none" ? "" : v)
+                    set("collegeId", v === "none" || v === null ? "" : v)
                   }
                 >
                   <SelectTrigger id="collegeId">

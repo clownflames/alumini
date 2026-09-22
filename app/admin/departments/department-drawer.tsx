@@ -93,9 +93,6 @@ export function DepartmentDrawer({
         side="bottom"
         className="h-[85vh] sm:max-w-none"
         // Prevent closing on outside click / escape
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onInteractOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <SheetHeader>
           <SheetTitle>
@@ -116,7 +113,7 @@ export function DepartmentDrawer({
             <Label htmlFor="collegeId">College *</Label>
             <Select
               value={values.collegeId}
-              onValueChange={(v) => setValues((s) => ({ ...s, collegeId: v }))}
+              onValueChange={(v) => setValues((s) => ({ ...s, collegeId: v ?? "" }))}
               disabled={mode === "edit"}
             >
               <SelectTrigger id="collegeId" className={'w-full'}>

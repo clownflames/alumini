@@ -91,9 +91,6 @@ export function PostComposerDrawer({
       <SheetContent
         side="bottom"
         className="h-[75vh] sm:max-w-none flex flex-col p-0 gap-0"
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onInteractOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <SheetHeader className="shrink-0 border-b px-6 py-4">
           <SheetTitle>
@@ -133,8 +130,6 @@ export function PostComposerDrawer({
                 value={values.image || null}
                 onChange={(url) => set("image", url ?? "")}
                 disabled={submitting}
-                aspectRatio={16 / 9}
-                label="Upload Post Image"
               />
               <p className="text-xs text-muted-foreground">
                 Max 5 MB · JPG, PNG, WEBP, GIF

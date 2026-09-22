@@ -97,9 +97,6 @@ export function BranchDrawer({
       <SheetContent
         side="bottom"
         className="h-[85vh] sm:max-w-none"
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onInteractOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <SheetHeader>
           <SheetTitle>
@@ -120,7 +117,7 @@ export function BranchDrawer({
             <Label htmlFor="departmentId">Department *</Label>
             <Select
               value={values.departmentId}
-              onValueChange={(v) => set("departmentId", v)}
+              onValueChange={(v) => set("departmentId", v ?? "")}
               disabled={mode === "edit"}
             >
               <SelectTrigger id="departmentId">

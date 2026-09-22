@@ -35,7 +35,7 @@ export function getCollegeColumns({
 }: {
   onEdit: (c: College) => void;
   onDelete: (c: College) => void;
-}): ColumnDef<College>[] {
+}) {
   return [
     {
       accessorKey: "name",

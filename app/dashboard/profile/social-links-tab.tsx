@@ -102,7 +102,7 @@ export function SocialLinksTab({
       >
         <div className="grid gap-2">
           <Label htmlFor="platform">Platform</Label>
-          <Select value={platform} onValueChange={setPlatform}>
+          <Select value={platform} onValueChange={(v) => setPlatform(v ?? "linkedin")}>
             <SelectTrigger id="platform">
               <SelectValue />
             </SelectTrigger>

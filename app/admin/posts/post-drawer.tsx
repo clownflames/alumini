@@ -95,9 +95,6 @@ export function PostDrawer({
       <SheetContent
         side="bottom"
         className="h-[80vh] sm:max-w-none"
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onInteractOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <SheetHeader>
           <SheetTitle>

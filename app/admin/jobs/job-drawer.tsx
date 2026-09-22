@@ -150,9 +150,6 @@ export function JobDrawer({
       <SheetContent
         side="bottom"
         className="h-[90vh] sm:max-w-none"
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onInteractOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <SheetHeader>
           <SheetTitle>
@@ -219,7 +216,7 @@ export function JobDrawer({
               <Select
                 value={values.companyId || "none"}
                 onValueChange={(v) =>
-                  set("companyId", v === "none" ? "" : v)
+                  set("companyId", v === "none" || v === null ? "" : v)
                 }
               >
                 <SelectTrigger>
@@ -274,7 +271,7 @@ export function JobDrawer({
                 onValueChange={(v) =>
                   set(
                     "experienceLevel",
-                    v === "none" ? "" : (v as JobExperience)
+                    v === "none" || v === null ? "" : (v as JobExperience)
                   )
                 }
               >
@@ -323,7 +320,7 @@ export function JobDrawer({
               <Label htmlFor="salaryCurrency">Currency</Label>
               <Select
                 value={values.salaryCurrency}
-                onValueChange={(v) => set("salaryCurrency", v)}
+                onValueChange={(v) => set("salaryCurrency", v ?? "INR")}
               >
                 <SelectTrigger id="salaryCurrency">
                   <SelectValue />

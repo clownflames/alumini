@@ -145,9 +145,6 @@ export function AlumniCreateDrawer({
       <SheetContent
         side="bottom"
         className="h-[90vh] sm:max-w-none flex flex-col p-0 gap-0"
-        onPointerDownOutside={(e:any) => e.preventDefault()}
-        onInteractOutside={(e:any) => e.preventDefault()}
-        onEscapeKeyDown={(e:any) => e.preventDefault()}
       >
         {/* Fixed header */}
         <SheetHeader className="shrink-0 border-b px-6 py-4">
@@ -338,7 +335,7 @@ export function AlumniCreateDrawer({
                   <Select
                     value={values.collegeId || "none"}
                     onValueChange={(v) =>
-                      set("collegeId", v === "none" ? "" : v)
+                      set("collegeId", v === "none" || v === null ? "" : v)
                     }
                   >
                     <SelectTrigger id="collegeId">
@@ -360,7 +357,7 @@ export function AlumniCreateDrawer({
                   <Select
                     value={values.departmentId || "none"}
                     onValueChange={(v) =>
-                      set("departmentId", v === "none" ? "" : v)
+                      set("departmentId", v === "none" || v === null ? "" : v)
                     }
                   >
                     <SelectTrigger id="departmentId">
@@ -384,7 +381,7 @@ export function AlumniCreateDrawer({
                   <Select
                     value={values.batchId || "none"}
                     onValueChange={(v) =>
-                      set("batchId", v === "none" ? "" : v)
+                      set("batchId", v === "none" || v === null ? "" : v)
                     }
                   >
                     <SelectTrigger id="batchId">

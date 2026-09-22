@@ -116,8 +116,6 @@ export function ProfileTab({
           value={image || null}
           onChange={(url) => setImage(url ?? "")}
           disabled={saving}
-          aspectRatio={1}
-          label="Upload Profile Image"
         />
         <p className="text-xs text-muted-foreground">
           Max 5 MB · JPG, PNG, WEBP · Square recommended

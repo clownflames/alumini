@@ -87,9 +87,6 @@ export function FacultyEditDrawer({
       <SheetContent
         side="bottom"
         className="h-[60vh] sm:max-w-none flex flex-col p-0 gap-0"
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onInteractOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <SheetHeader className="shrink-0 border-b px-6 py-4">
           <SheetTitle>Edit Faculty</SheetTitle>
@@ -121,7 +118,7 @@ export function FacultyEditDrawer({
                 <Label htmlFor="status">Status</Label>
                 <Select
                   value={values.status}
-                  onValueChange={(v) => set("status", v as UserStatus)}
+                  onValueChange={(v) => set("status", (v ?? "active") as UserStatus)}
                 >
                   <SelectTrigger id="status">
                     <SelectValue />
@@ -138,7 +135,7 @@ export function FacultyEditDrawer({
                 <Label htmlFor="role">Role</Label>
                 <Select
                   value={values.role}
-                  onValueChange={(v) => set("role", v as UserRole)}
+                  onValueChange={(v) => set("role", (v ?? "admin") as UserRole)}
                 >
                   <SelectTrigger id="role">
                     <SelectValue />

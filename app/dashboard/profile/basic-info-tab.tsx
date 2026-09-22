@@ -247,7 +247,7 @@ export function BasicInfoTab({
           <Label htmlFor="gender">Gender</Label>
           <Select
             value={values.gender || "none"}
-            onValueChange={(v) => set("gender", v === "none" ? "" : v)}
+            onValueChange={(v) => set("gender", v === "none" || v === null ? "" : v)}
           >
             <SelectTrigger id="gender">
               <SelectValue placeholder="Select" />
@@ -317,7 +317,7 @@ export function BasicInfoTab({
             <Select
               value={values.collegeId || "none"}
               onValueChange={(v) =>
-                set("collegeId", v === "none" ? "" : v)
+                set("collegeId", v === "none" || v === null ? "" : v)
               }
             >
               <SelectTrigger id="collegeId">
@@ -339,7 +339,7 @@ export function BasicInfoTab({
             <Select
               value={values.departmentId || "none"}
               onValueChange={(v) =>
-                set("departmentId", v === "none" ? "" : v)
+                set("departmentId", v === "none" || v === null ? "" : v)
               }
             >
               <SelectTrigger id="departmentId">
@@ -362,7 +362,7 @@ export function BasicInfoTab({
             <Label htmlFor="batchId">Batch</Label>
             <Select
               value={values.batchId || "none"}
-              onValueChange={(v) => set("batchId", v === "none" ? "" : v)}
+              onValueChange={(v) => set("batchId", v === "none" || v === null ? "" : v)}
             >
               <SelectTrigger id="batchId">
                 <SelectValue placeholder="Select batch" />

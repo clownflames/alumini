@@ -139,9 +139,6 @@ export function EventDrawer({
       <SheetContent
         side="bottom"
         className="h-[90vh] sm:max-w-none flex flex-col p-0 gap-0"
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onInteractOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <SheetHeader className="shrink-0 border-b px-6 py-4">
           <SheetTitle>
@@ -188,7 +185,7 @@ export function EventDrawer({
                 <Label htmlFor="eventType">Event Type</Label>
                 <Select
                   value={values.eventType}
-                  onValueChange={(v) => set("eventType", v as EventType)}
+                  onValueChange={(v) => set("eventType", (v ?? "in_person") as EventType)}
                 >
                   <SelectTrigger id="eventType">
                     <SelectValue />
@@ -205,7 +202,7 @@ export function EventDrawer({
                 <Label htmlFor="status">Status</Label>
                 <Select
                   value={values.status}
-                  onValueChange={(v) => set("status", v as EventStatus)}
+                  onValueChange={(v) => set("status", (v ?? "draft") as EventStatus)}
                 >
                   <SelectTrigger id="status">
                     <SelectValue />
@@ -289,7 +286,7 @@ export function EventDrawer({
                 <Select
                   value={values.collegeId || "none"}
                   onValueChange={(v) =>
-                    set("collegeId", v === "none" ? "" : v)
+                    set("collegeId", v === "none" || v === null ? "" : v)
                   }
                 >
                   <SelectTrigger id="collegeId">

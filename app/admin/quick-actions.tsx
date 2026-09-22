@@ -52,12 +52,12 @@ export function QuickActions() {
         {actions.map((a) => {
           const Icon = a.icon;
           return (
-            <Button key={a.label} variant="outline" asChild>
-              <Link href={a.href}>
+            <Link key={a.label} href={a.href}>
+              <Button variant="outline">
                 <Icon className="mr-2 size-4" />
                 {a.label}
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           );
         })}
       </div>

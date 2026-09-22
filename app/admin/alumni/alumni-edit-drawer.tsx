@@ -159,9 +159,6 @@ export function AlumniEditDrawer({
       <SheetContent
         side="bottom"
         className="h-[90vh] sm:max-w-none flex flex-col p-0 gap-0"
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onInteractOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
       >
         {/* Fixed header */}
         <SheetHeader className="shrink-0 border-b px-6 py-4">
@@ -197,7 +194,7 @@ export function AlumniEditDrawer({
                   <Label htmlFor="status">Status</Label>
                   <Select
                     value={values.status}
-                    onValueChange={(v) => set("status", v as AlumniStatus)}
+                    onValueChange={(v) => set("status", (v ?? "active") as AlumniStatus)}
                   >
                     <SelectTrigger id="status">
                       <SelectValue />
@@ -310,7 +307,7 @@ export function AlumniEditDrawer({
                   <Select
                     value={values.collegeId || "none"}
                     onValueChange={(v) =>
-                      set("collegeId", v === "none" ? "" : v)
+                      set("collegeId", v === "none" || v === null ? "" : v)
                     }
                   >
                     <SelectTrigger id="collegeId">
@@ -332,7 +329,7 @@ export function AlumniEditDrawer({
                   <Select
                     value={values.departmentId || "none"}
                     onValueChange={(v) =>
-                      set("departmentId", v === "none" ? "" : v)
+                      set("departmentId", v === "none" || v === null ? "" : v)
                     }
                   >
                     <SelectTrigger id="departmentId">
@@ -356,7 +353,7 @@ export function AlumniEditDrawer({
                   <Select
                     value={values.batchId || "none"}
                     onValueChange={(v) =>
-                      set("batchId", v === "none" ? "" : v)
+                      set("batchId", v === "none" || v === null ? "" : v)
                     }
                   >
                     <SelectTrigger id="batchId">

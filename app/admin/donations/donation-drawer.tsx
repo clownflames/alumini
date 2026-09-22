@@ -108,9 +108,6 @@ export function DonationDrawer({
       <SheetContent
         side="bottom"
         className="h-[80vh] sm:max-w-none"
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onInteractOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <SheetHeader>
           <SheetTitle>
@@ -147,7 +144,7 @@ export function DonationDrawer({
               <Label htmlFor="currency">Currency</Label>
               <Select
                 value={values.currency}
-                onValueChange={(v) => set("currency", v)}
+                onValueChange={(v) => set("currency", v ?? "INR")}
               >
                 <SelectTrigger id="currency">
                   <SelectValue />
@@ -186,7 +183,7 @@ export function DonationDrawer({
               <Select
                 value={values.collegeId || "none"}
                 onValueChange={(v) =>
-                  set("collegeId", v === "none" ? "" : v)
+                  set("collegeId", v === "none" || v === null ? "" : v)
                 }
               >
                 <SelectTrigger id="collegeId">
@@ -210,7 +207,7 @@ export function DonationDrawer({
               <Select
                 value={values.paymentProvider || "none"}
                 onValueChange={(v) =>
-                  set("paymentProvider", v === "none" ? "" : v)
+                  set("paymentProvider", v === "none" || v === null ? "" : v)
                 }
               >
                 <SelectTrigger id="paymentProvider">

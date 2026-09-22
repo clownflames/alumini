@@ -112,9 +112,6 @@ export function CollegeDrawer({
       <SheetContent
         side="bottom"
         className="h-[90vh] sm:max-w-none"
-        onPointerDownOutside={(e) => e.preventDefault()}
-        onInteractOutside={(e) => e.preventDefault()}
-        onEscapeKeyDown={(e) => e.preventDefault()}
       >
         <SheetHeader>
           <SheetTitle>
